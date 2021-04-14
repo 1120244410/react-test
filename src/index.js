@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './pages/App';
+import Main from './pages/mian';
 
 import moment from 'moment';
 import 'moment/locale/zh-cn';
@@ -11,7 +11,7 @@ moment.locale('zh-cn');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App msg={'hello'} />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
