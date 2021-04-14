@@ -6,10 +6,19 @@ import Logo from './logo';
 const { SubMenu } = Menu;
 
 class MenuComponent extends Component {
+  state = {
+    collapsed: false,
+  };
+  onCollapse = collapsed => {
+    this.setState({ collapsed });
+  };
   onOpenChange() {}
   render() {
+    const { collapsed } = this.state;
     return (
       <Layout.Sider
+        collapsible
+        collapsed={collapsed}
         style={{
           overflowY: 'auto',
           height: '100%',
@@ -17,6 +26,7 @@ class MenuComponent extends Component {
           left: 0,
         }}
         theme="light"
+        onCollapse={this.onCollapse}
       >
         <Logo />
         <Menu mode="inline">

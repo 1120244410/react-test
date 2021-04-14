@@ -17,7 +17,7 @@ function Main() {
     <>
       <Layout className="page">
         <MenuComponent />
-        <Layout>
+        <Layout style={{ marginLeft: 200 }}>
           <Header style={{ background: '#fff' }}>Header</Header>
           <Content>content</Content>
           <Footer>footer</Footer>
