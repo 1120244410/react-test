@@ -1,12 +1,16 @@
-const style = {
-  height: '64px',
-  textAlign: 'center',
-  lineHeight: '64px',
-};
-export default function LogoComponent() {
+const LogoComponent = function() {
   return (
     <>
-      <div style={style}>LOGO</div>
+      <div
+        style={{
+          height: '64px',
+          textAlign: 'center',
+          lineHeight: '64px',
+        }}
+      >
+        LOGO
+      </div>
     </>
   );
-}
+};
+export default LogoComponent;

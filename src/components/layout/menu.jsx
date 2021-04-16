@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import { Layout, Menu } from 'antd';
 
-import { menus } from '@/misc/menus.js';
-import Logo from './logo';
+import menus from '@/misc/menus.js';
+import Logo from './logo.js';
 const { SubMenu } = Menu;
 
 class MenuComponent extends Component {
@@ -12,7 +12,9 @@ class MenuComponent extends Component {
   onCollapse = collapsed => {
     this.setState({ collapsed });
   };
-  onOpenChange() {}
+  onClick(key) {
+    console.log(key);
+  }
   render() {
     const { collapsed } = this.state;
     return (
@@ -22,16 +24,18 @@ class MenuComponent extends Component {
         style={{
           overflowY: 'auto',
           height: '100%',
-          position: 'fixed',
-          left: 0,
         }}
         theme="light"
         onCollapse={this.onCollapse}
       >
         <Logo />
-        <Menu mode="inline">
+        <Menu
+          mode="inline"
+          style={{ height: 'calc(100% - 64px)' }}
+          onClick={({ key }) => this.onClick(key)}
+        >
           {menus.map((m, i) => {
-            return (
+            return m.children && m.children.length ? (
               <SubMenu key={m.link || i} icon={m.icon} title={m.title}>
                 {m.children && m.children.length
                   ? m.children.map((c, j) => {
@@ -39,6 +43,8 @@ class MenuComponent extends Component {
                     })
                   : null}
               </SubMenu>
+            ) : (
+              <Menu.Item key={m.link || i}>{m.title}</Menu.Item>
             );
           })}
         </Menu>

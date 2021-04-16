@@ -9,9 +9,4 @@ import 'antd/dist/antd.css';
 
 moment.locale('zh-cn');
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<Main />, document.getElementById('root'));

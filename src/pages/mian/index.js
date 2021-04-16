@@ -2,7 +2,7 @@ import './index.css';
 import login from '@/service/login.js';
 import { Layout } from 'antd';
 import MenuComponent from '@/components/layout/menu';
-const { Header, Footer, Content } = Layout;
+const { Header, Content } = Layout;
 
 function Main() {
   login.login({
@@ -17,10 +17,9 @@ function Main() {
     <>
       <Layout className="page">
         <MenuComponent />
-        <Layout style={{ marginLeft: 200 }}>
+        <Layout>
           <Header style={{ background: '#fff' }}>Header</Header>
           <Content>content</Content>
-          <Footer>footer</Footer>
         </Layout>
       </Layout>
     </>
