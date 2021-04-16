@@ -1,15 +1,15 @@
 import './index.css';
-import login from '@/service/login.js';
+import main from '@/service/main.js';
 import { Layout } from 'antd';
 import MenuComponent from '@/components/layout/menu';
 const { Header, Content } = Layout;
 
 function Main() {
-  login.login({
+  main.login({
     name: 'hanjj',
     pw: '123',
   });
-  login.admin({
+  main.admin({
     name: 'hanjj',
     pw: '123',
   });

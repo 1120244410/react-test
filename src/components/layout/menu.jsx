@@ -2,18 +2,25 @@ import { Component } from 'react';
 import { Layout, Menu } from 'antd';
 
 import menus from '@/misc/menus.js';
-import Logo from './logo.js';
+import Logo from './logo.jsx';
 const { SubMenu } = Menu;
 
 class MenuComponent extends Component {
   state = {
     collapsed: false,
   };
+
   onCollapse = collapsed => {
     this.setState({ collapsed });
   };
   onClick(key) {
     console.log(key);
+    this.props.history.push({
+      pathname: key,
+      state: {
+        id: 3,
+      },
+    });
   }
   render() {
     const { collapsed } = this.state;

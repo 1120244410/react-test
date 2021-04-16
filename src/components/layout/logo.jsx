@@ -1,4 +1,5 @@
-const LogoComponent = function() {
+/* eslint import/no-anonymous-default-export: [2, {"allowAnonymousFunction": true}] */
+export default function LogoComponent() {
   return (
     <>
       <div
@@ -12,5 +13,4 @@ const LogoComponent = function() {
       </div>
     </>
   );
-};
-export default LogoComponent;
+}
