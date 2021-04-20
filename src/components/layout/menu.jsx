@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Layout, Menu } from 'antd';
 
-import menus from '@/misc/menus.js';
+import menus from '@/router/menus.js';
 import Logo from './logo.jsx';
 const { SubMenu } = Menu;
 
@@ -15,12 +15,6 @@ class MenuComponent extends Component {
   };
   onClick(key) {
     console.log(key);
-    this.props.history.push({
-      pathname: key,
-      state: {
-        id: 3,
-      },
-    });
   }
   render() {
     const { collapsed } = this.state;
@@ -43,15 +37,15 @@ class MenuComponent extends Component {
         >
           {menus.map((m, i) => {
             return m.children && m.children.length ? (
-              <SubMenu key={m.link || i} icon={m.icon} title={m.title}>
+              <SubMenu key={m.path || i} icon={m.icon} title={m.title}>
                 {m.children && m.children.length
                   ? m.children.map((c, j) => {
-                      return <Menu.Item key={c.link || j}>{c.title}</Menu.Item>;
+                      return <Menu.Item key={c.path || j}>{c.title}</Menu.Item>;
                     })
                   : null}
               </SubMenu>
             ) : (
-              <Menu.Item key={m.link || i}>{m.title}</Menu.Item>
+              <Menu.Item key={m.path || i}>{m.title}</Menu.Item>
             );
           })}
         </Menu>

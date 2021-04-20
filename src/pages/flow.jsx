@@ -12,6 +12,7 @@ class Flow extends Component {
   }
 
   async fetchData() {
+    const { dispatch } = this.props;
     const list = await dispatch({
       type: 'flow/fetch',
     });
@@ -150,14 +151,9 @@ class Flow extends Component {
 
     return (
       <>
-        <PageHeaderWrapper>
-          <div
-            className={styles.standardList}
-            style={{ backgroundColor: '#fff' }}
-          >
-            <Table dataSource={list} columns={columns} bordered />
-          </div>
-        </PageHeaderWrapper>
+        <div style={{ backgroundColor: '#fff' }}>
+          <Table dataSource={list} columns={columns} bordered />
+        </div>
       </>
     );
   }

@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './pages/main';
+import Main from '@/pages/main/index.js';
 
 import moment from 'moment';
 import 'moment/locale/zh-cn';

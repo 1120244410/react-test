@@ -1,15 +1,24 @@
 import React from 'react';
-import { HashRouter, Route, Switch, hashHistory } from 'react-router-dom';
-import Main from '@/pages/main';
-import Flow from '@/pages/flow';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import menus from './menus';
 
-const BasicRoute = () => (
-  <HashRouter history={hashHistory}>
-    <Switch>
-      <Route exact path="/" component={Main} />
-      <Route exact path="/flow" component={Flow} />
-    </Switch>
-  </HashRouter>
-);
+export default function RouteController() {
+  return (
+    <Router>
+      <Switch>
+        {menus.map((route, i) => (
+          <RouteWithSubRoutes key={i} {...route} />
+        ))}
+      </Switch>
+    </Router>
+  );
+}
 
-export default BasicRoute;
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      path={route.path}
+      render={props => <route.component {...props} routes={route.children} />}
+    />
+  );
+}
