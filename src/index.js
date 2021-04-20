@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 import './index.css';
 import Main from '@/pages/main/index.js';
 
@@ -9,9 +9,10 @@ import 'antd/dist/antd.css';
 
 moment.locale('zh-cn');
 
+const ShowMain = withRouter(Main);
 ReactDOM.render(
   <Router>
-    <Main />
+    <ShowMain />
   </Router>,
   document.getElementById('root')
 );

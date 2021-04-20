@@ -3,7 +3,7 @@ import Flow from '@/pages/flow.jsx';
 
 const menus = [
   {
-    path: '/',
+    path: '/home',
     component: Home,
     title: '欢迎',
     children: [],
