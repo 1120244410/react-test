@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './index.css';
 import Main from '@/pages/main/index.js';
 
@@ -8,4 +9,9 @@ import 'antd/dist/antd.css';
 
 moment.locale('zh-cn');
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(
+  <Router>
+    <Main />
+  </Router>,
+  document.getElementById('root')
+);

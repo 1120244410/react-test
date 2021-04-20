@@ -1,5 +1,5 @@
-import Home from '@/pages/home';
-import Flow from '@/pages/flow';
+import Home from '@/pages/home.js';
+import Flow from '@/pages/flow.jsx';
 
 const menus = [
   {
